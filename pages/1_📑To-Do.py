@@ -18,9 +18,9 @@ def show(ID: str):
     description = st.session_state[f"Description-Form{ID}"]
     category=st.session_state[f"Category_Of{ID}"]
     st.session_state[f"list{ID}"] = f"""
-\n📝 Task: {task}\n
-📅 Date: {date}\n
-🖊️ Description: {description}\n
+📝 Task: {task}
+📅 Date: {date}
+🖊️ Description: {description}
 🏷️ Category: {category}
 """
 
@@ -55,7 +55,7 @@ if C:
 
     if is_exit:
         st.markdown("### 🎯 All Your Tasks")
-        colors = ["#e6f7ff", "#f0f9eb", "#fef7ec", "#fceff3", "#e6f7ff"]
+        colors = ["#1b635a", "#1b635a", "#1b635a", "#1b635a", "#1b635a"]
 
         # Header
         cols = st.columns([1, 2, 2, 3,2])
@@ -69,7 +69,7 @@ if C:
             id = str(i + 1)
             if f"list{id}" in st.session_state and st.session_state[f"list{id}"]:
                 task_text = st.session_state[f"list{id}"]
-                task_lines = task_text.strip().split('\n\n')
+                task_lines = task_text.strip().split('\n')
                 task_name = task_lines[0].replace("📝 Task:", "").strip()
                 task_date = task_lines[1].replace("📅 Date:", "").strip()
                 task_desc = task_lines[2].replace("🖊️ Description:", "").strip()
